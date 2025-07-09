@@ -4,6 +4,7 @@ body {
     font-weight: 400;
     background-color: black;
     color: white;
+    overflow-x: hidden;
 }
 
 
@@ -102,15 +103,18 @@ a {
 }
 
 
-.desc-text {
+.header-desc p {
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 30px;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 60px;
     font-weight: 700;
+    transition: 1.5s;
 }
+
+
 
 
 .header-author {
@@ -118,124 +122,119 @@ a {
 }
 
 
-.author-text {
+.header-author p{
     position: absolute;
     right: 30px;
-    top: 704px;
+    top: 720px;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 60px;
     font-weight: 700;
+    transition: 1.5s;
 }
 
 
 .cards {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.card-item {
-    position: relative;
-    transition: 0.3s;
-}
-
-
-.text {
-    position: absolute;
-    top: 40px;
-    left: 130px;
-
-    font-size: 19px;
-    font-weight: 400;
-    width: 300px;
-
-    color: lightgray;
-    border: 1px solid lightgray;
-    padding: 10px 20px;
-    border-radius: 40px;
-    box-shadow: 0 0 15px rgb(138, 135, 135);;
-}
-
-
-.img-history {
-    position: absolute;
-    top: 40px;
-    right: 130px;
-    max-width: 300px;
-
-    border: 1px solid lightgray;
-    border-radius: 40px;
-    box-shadow: 0 0 15px rgb(138, 135, 135);
-}
-
-
-.cards {
-    padding-top: 40px;
-}
-
-
-.card {
     position: relative;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
 }
 
 
-.auto-text {
-    font-size: 25px;
-    font-weight: 600;
-    padding-bottom: 7px;
-}
-
-.include-auto {
-    position: absolute;
-    top: -560px;
-    right: 29%;
-    width: 45px;
-    height: 45px;
-    background-color: rgba(190, 190, 190, 0.384);
-    padding: 5px 5px;
-
-    border: 1px solid lightgrey;
-    border-radius: 25px;
-
-    cursor: pointer;
+.header-vid {
+    margin: 35px 0;
+    margin-left: 5px;
 }
 
 
-.auto-video {
+.header-vid video {
     border: 1px solid black;
-    border-radius: 40px;
+    border-radius: 25px;
 }
 
 
-.model-auto {
-    position: absolute;
-    top: 290px;
-    left: 50px;
-    max-width: 186px;
-    text-align: center;
-    font-size: 20px;
-
-    border: 1px solid lightgray;
-    border-radius: 50px;
-    padding: 10px 0;
-    box-shadow: 0 0 15px rgb(138, 135, 135);
+.cards .card h1 {
+    display: flex;
+    justify-content: center;
 }
 
 
-.ls-auto {
-    position: absolute;
-    top: 290px;
-    right: 50px;
-    max-width: 186px;
+.word .text {
     text-align: center;
-    font-size: 20px;
+    margin: 50px 0;
+}
 
-    border: 1px solid lightgray;
-    border-radius: 50px;
-    padding: 10px 5px;
-    box-shadow: 0 0 15px rgb(138, 135, 135);
+
+.word .text p {
+    font-size: 60px;
+    font-weight: 800;
+}
+
+
+.gradient {
+    background: linear-gradient(to right, #008baa, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+    background-size: 200%;
+    background-clip: text;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+
+.author {
+    margin: 40px 0;
+}
+
+
+.about .author p{
+    font-size: 50px;
+    margin-bottom: 60px;
+    font-weight: 800;
+    text-align: center;
+}
+
+
+.about .author p img {
+    border-radius: 25px;
+}
+
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.author {
+  opacity: 0;
+  transform: translateY(50px); 
+  animation: slideInCenter 1.2s ease forwards;
+  animation-delay: 0.3s; 
+}
+
+@keyframes slideInCenter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.author img {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInCenter 1.2s ease forwards;
+  animation-delay: 1.5s;
+  display: block;
+  max-width: 100%;
+  margin: 20px auto 0;
 }
